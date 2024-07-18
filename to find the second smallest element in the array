@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <limits.h>
+void main()
+{
+int array[] = {111,112,121,432,1009,3456,23,567,890,213,312}; 
+int n = sizeof(array)/sizeof(array[0]);
+int i, first_min= INT_MAX , second_min = INT_MAX;
+for(i = 0; i < n; i++)
+{
+if(array[i] < first_min)
+{
+second_min = first_min;
+first_min = array[i];
+}
+else if (array[i] < second_min && array[i] != first_min) 
+{
+second_min = array[i];
+}
+}
+printf("The second smallest element is %d\n", second_min);
+}
